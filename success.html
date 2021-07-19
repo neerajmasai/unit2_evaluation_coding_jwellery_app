@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jwellery Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="successDiv">
+        <h1 id="orderStatus">Order Processing...</h1>
+
+    </div>
+</body>
+<script>
+    function orderComplete(){
+        var promise = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("Thank You For Your Purchase!");
+            }, 3000);
+        });
+        promise.then((resp) => {
+            document.getElementById("orderStatus").innerHTML = resp;
+        });
+    }
+    orderComplete();
+</script>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jwellery Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button id="backBtn" onclick="goToIndex()">Back to products</button>
+    <div id="cartDiv">
+        <h1>Your Cart Items</h1>
+        <div id="cartItems">
+
+        </div>
+        <div id="cartOptions">
+            <input type="text" name="promo" id="promo">
+            <button id="promoBtn">Apply Promo</button>
+            <h1>Total: <span id="totalPrice"></span></h1>
+            <button onclick="checkOut()" style="width:100%;height:80px;font-size:20px;background-color: green;">Continue Payment</button>
+        </div>
+    </div>
+</body>
+<script>
+ function loadCart(){
+     cartTotal();
+    var cartItems = JSON.parse(localStorage.getItem("cartItems"));
+    for(var i=0; i<cartItems.length; i++){
+        console.log(cartItems);
+        appendToCart(cartItems[i]);
+    }
+}
+function appendToCart(product){
+    var mainDiv = document.getElementById("cartItems");
+    var div = document.createElement("div");
+    div.style.width = "100%";
+    div.style.height = "100px";
+    div.style.backgroundColor = "silver";
+    div.style.margin = "10px";
+    div.style.display = "flex";
+    div.style.padding = "20px";
+    div.style.gap = "10px";
+    div.id = product.id;
+
+    var h2 = document.createElement("h2");
+    h2.innerHTML = product.name;
+
+    var h3 = document.createElement("h2");
+    h3.innerHTML = product.price;
+
+    //append to div
+    div.append(h2, h3);
+
+    //append to page
+    mainDiv.append(div);
+
+}
+function checkOut(){
+    window.location.href = "checkout.html";
+}
+function cartTotal(){
+   var value = JSON.parse(localStorage.getItem("cartTotal"));
+   document.getElementById("totalPrice").innerHTML = value;
+}
+loadCart();
+</script>
+</html>

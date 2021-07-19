@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jwellery Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button id="cartBtn" onclick="goToCart()">Shopping Cart</button>
+    <div id="top">
+        <h1>Ranka Jwellers</h1>
+        <h2>A bond of trust forever.</h2>
+    </div>
+    <div id="actions-div">
+        <select name="sort-action" id="sortOption">
+            <option onclick="sortPrice(1)" value="priceAsc">Sort By Price (Low - High)</option>
+            <option onclick="sortPrice(2)" value="priceDesc">Sort By Price (High - Low)</option>
+            <option onclick="filterByBrand()" value="brand">Filter By Brand</option>
+        </select>
+        <select name="sort-action" id="sortOption">
+            <option onclick="filterByBrand(1)" value="brand">Filter By Brand (Ranka)</option>
+            <option onclick="filterByBrand(2)" value="brand">Filter By Brand (Tanishq)</option>
+        </select>
+    </div>
+    <div id="products-catalogue">
+    </div>
+    <div id="footer">
+
+    </div>
+</body>
+<script src="main.js"></script>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jwellery Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="checkoutDiv">
+        <h1>Enter Your Payment Details</h1>
+        <input type="text" placeholder="Enter Your Name As On Card">
+        <input type="text" placeholder="Enter Card Number">
+        <input type="password" placeholder="Enter CVV">
+
+        <h1>Enter Your Shipping Address</h1>
+        <select name="country" id="country">
+            <option value="India">India</option>
+            <option value="India">USA</option>
+            <option value="India">Russia</option>
+            <option value="India">Brazil</option>
+            <option value="India">Canada</option>
+            <option value="India">UK</option>
+        </select>
+        <input type="text" placeholder="Address Line No 1">
+        <input type="text" placeholder="Address Line No 2 (optional)">
+        <input type="text" placeholder="City">
+        <input type="text" placeholder="State">
+        <input type="text" placeholder="PIN">
+        <button id="completePayment" onclick="success()">Complete Payment</button>
+    </div>
+</body>
+<script>
+    function success(){
+        window.location.href = "success.html";
+    }
+</script>
+</html>
